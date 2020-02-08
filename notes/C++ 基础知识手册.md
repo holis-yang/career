@@ -8,9 +8,9 @@
 
 ### C++ 数据类型
 
-![C++数据类型](D:\Desktop\career\notes\figure\C++数据类型.png)
+![C++数据类型](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/C%2B%2B数据类型.png))
 
-![image-20200206150928720](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206150928720.png)
+![image-20200206150928720](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/数值型和字符型数据的字节数和取值范围.png))
 
 
 
@@ -26,7 +26,7 @@
 
 ### 2.5.5 强制类型转换运算符
 
-![image-20200206151232264](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206151232264.png)
+![image-20200206151232264](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/强制类型转换.png)
 
 
 
@@ -36,7 +36,7 @@ PDF 77 页：
 
 C++ 种一般使用流输入输出```cin, cout``` 进行输入输出。同样可以进行一些特殊操作，如输出规定字段宽度，只保留两位小数，数据向左或向右对齐等。 C++ 中输入输出流中使用的控制符如表3.1 所示。
 
-![image-20200206152317908](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206152317908.png)
+![image-20200206152317908](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/输入输出流控制符.png)
 
 需要注意的是：如果使用了控制符，在程序单位的开头除了要加```iostream``` 头文件外，还要加`iomanip`头文件。
 
@@ -66,7 +66,7 @@ c = getchar();
 
 `switch`语句是多分支选择语句，用来实现多分支选择结构。`if`语句只有两个分支可以选择，但实际问题中常常会用到多分支的选择。如将学生按照成绩等级进行划分；分类统计；
 
-![image-20200206153506981](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206153506981.png)
+![image-20200206153506981](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/switch 表达式.png)
 
 ### 4.4.3 对被调用函数的声明和函数原型
 
@@ -87,7 +87,7 @@ float add(float, float)
 
 这种函数声明称为函数原型`function prototype`.  使用函数声明和函数原型的**作用**是：根据函数声明或者原型在程序编译阶段对调用函数的合法性进行全面检查。在编译阶段对程序的合法性进行检查可以避免编译通过的程序出现执行错误的情况。由于实际程序通常较大，运行过程会消耗大量的资源，在运行阶段进行调试将会浪费大量的资源。在编译阶段对程序的合法性进行检查可以减少由于语法而造成的执行错误。
 
-![image-20200206170858846](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206170858846.png)
+![image-20200206170858846](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/函数原型的一般形式.png)
 
 ## 4.6 函数的重载
 
@@ -151,7 +151,7 @@ int func(int a)                    //定义func 函数 a为形参
 
 有时希望函数中的局部变量的值在函数调用结束后不消失而保留原值，即其占用的存储单元不释放，在下一次该函数调用时，该变量保留上一次函数调用结束时的值。这时就应该指定该局部变量为静态局部变量（static local variable）。
 
-![image-20200206223742842](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206223742842.png)
+![image-20200206223742842](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/静态局部变量的说明.png)
 
 ### 4.12.4 用 register 声明寄存器变量
 
@@ -192,11 +192,11 @@ int fac(int n)
    
    ```
 
-   ![image-20200207091408173](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200207091408173.png)
+   ![image-20200207091408173](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/static 全局变量.png)
 
 ##  4.13 变量属性小结
 
-![image-20200207094033161](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200207094033161.png)
+![image-20200207094033161](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/local global variable.png)
 
 
 
@@ -247,7 +247,7 @@ C++ 中的预处理包含3种：宏定义，文件包含，条件编译。
 #include "file2.cpp"   //先在用户定义的目录中寻找file2.cpp文件，若没有，则在系统目录中找
 ```
 
-![image-20200207100522247](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200207100522247.png)
+![image-20200207100522247](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/文件包含多文件.png)
 
 一般情况下，库函数和C++ 编译系统是存放在同一目录中的。如果要包含的是C++系统提供的头文件，宜用这种标准方式。
 
@@ -257,7 +257,7 @@ C++ 中的预处理包含3种：宏定义，文件包含，条件编译。
 
 一般情况下，在进行编译时对源程序中的每一行都要编译。但是有时希望程序中的某一部分内容只在满足一定条件时才进行编译，也就是指定对程序中的一部分内容进行编译的条件。如果不满足这个条件，就不编译这部分内容。这就是条件编译。
 
-![image-20200207102526207](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200207102526207.png)
+![image-20200207102526207](https://raw.githubusercontent.com/holis-yang/career/master/notes/figure/条件编译.png)
 
 ###  5.5.4 字符数组的输入输出
 
