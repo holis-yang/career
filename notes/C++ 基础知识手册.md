@@ -14,15 +14,15 @@
 
 
 
-## 2.4 C++ 种的运算符
+## 2.4 C++ 中的运算符
 
-![image-20200206151059564](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206151059564.png)
+![运算符总结](D:\Desktop\career\notes\figure\运算符总结.png)
 
 ### 2.5.3 表达式种各类数值型数据间的混合运算
 
 在进行运算时，不同类型的数据要先转换成同一类型，然后进行运算，运算结果为转换类型（如double类型）。转换的规则按照图2.7所示。
 
-![image-20200206151609626](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206151609626.png)
+![类型转换顺序](D:\Desktop\career\notes\figure\类型转换顺序.png)
 
 ### 2.5.5 强制类型转换运算符
 
@@ -58,7 +58,7 @@ c = getchar();
 
 ### 3.6.3 逻辑运算和逻辑表达式
 
-![image-20200206153236074](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206153236074.png)
+![三种逻辑运算符](D:\Desktop\career\notes\figure\三种逻辑运算符.png)
 
 
 
@@ -93,7 +93,7 @@ float add(float, float)
 
 一般情况下一个函数对应一种功能。但是有时我们要实现的是同一个功能，只是有些细节不同。如返回值类型不同，形参类型不同，形参数量不同等。对于这种从声明上能够看出明显区别的函数，即使两个函数同名的情况下，编译器也可以区分出调用的函数。这种情况下，我们可以用同一个函数名表示不同函数。
 
-![image-20200206172232232](C:\Users\YGG\AppData\Roaming\Typora\typora-user-images\image-20200206172232232.png)
+![函数重载](D:\Desktop\career\notes\figure\函数重载.png)
 
 ## 4.7 函数模板
 
@@ -378,9 +378,174 @@ cout << str;   //用字符数组名输出字符串
    string name[5];
    ```
 
+   ## 6.2 变量与指针
    
+   变量的指针就是变量的地址。用来存放变量地址的变量就是指针变量。
+   
+   ## 6.5 函数与指针
+   
+   ###  6.5.1  用函数指针变量调用函数
+   
+   指针变量也可以指向一个函数。一个函数在编译时被分配给一个入口地址。这个函数入口地址就称为函数的指针。可以用一个指针变量指向 max 函数，然后通过该指针变量调用此函数。
+
+![6.5.1 函数指针变量调用函数](D:\Desktop\career\notes\figure\6.5.1 函数指针变量调用函数.png)
+
+指向函数的指针变量的一般定义形式为：
+
+`函数类型  (*指针变量名)(函数形参表)`
+
+## 6.6 返回指针值的函数
+
+一个函数不仅可以返回整型值等，还可以返回指针型数据，即地址。定义指针函数的一般形式为：
+
+```C++
+类型名 * 函数名(参数列表)；
+如：
+int *a(int x, int y);
+```
+
+##  6.7 指针数组和指向指针的指针
+
+###  6.7.1 指针数组的概念
+
+元素都为指针类型数据，该数组称为指针数组。
+
+```C++
+类型名 * 数组名[数组长度]；
+如：
+int *p[4];
+```
+
+###  6.7.2 指向指针的指针
+
+由于指针数组名本身就表示地址，并且指针数组中元素都指向地址，因此可以说指针数组名`name[i]`为指向指针的指针。`p = name + i`就是指向指针型数据的指针。
 
 
+
+### 6.8.1 有关指针的数据类型的小结
+
+![6.8.1 有关指针的数据类型](D:\Desktop\career\notes\figure\6.8.1 有关指针的数据类型.png)
+
+###  6.8.2 指针运算小结
+
+指针变量可以有空值，即不指向任何变量：`p = NULL;` 实际上系统已先定义了NULL:
+
+`#define  NULL  0`
+
+##  6.9 引用
+
+```c++
+int a;         //定义a是整型变量
+int &b = a;    //声明b是a的引用
+
+swap(&i, &j);    //引用作为函数参数
+```
+
+引用是用不同的名字表示变量a，不会在内存中重新申请内存空间，仍然使用引用变量的地址。
+
+###  7.1.7 动态分配和撤销内存的运算符 new 和delete
+
+new 和 delete 是运算符，运算速度比函数快。 
+
+new 运算符的例子：
+
+```c++
+Syntax to use new operator:
+pointer-variable = new data-type;
+
+Initialize memory:
+pointer-variable = new data-type(value);
+
+Allocate block of memory:
+pointer-variable = new data-type[size];
+```
+
+如果由于内存不足等原因而无法正常分配空间，则new 会返回一个空指针NULL，用户可以根据该指针的值判断分配空间是否成功。
+
+```C++
+delete operator  Syntax:
+
+delete pointer-variable;
+
+delete [] pt;   //在指针变量前面加一堆方括号，表示是对数组空间的操作
+```
+
+##   7.2 共用体
+
+有时需要把几种不同类型的变量存放到同一段内存单元中。这时可以用共用体。
+
+```C++
+union 共用体类型名
+{ 成员列表
+}；
+```
+
+共用体变量每一个瞬间只能存放其中一种变量。换句话说，每一个瞬间只有一个成员起作用，其他成员不起作用。
+
+能够访问的是共用体变量中最后一次被赋值的成员，在对一个新的成员赋值后原有的成员就失去作用。
+
+**共用体为利用同一个地址存储不同类型数据提供了方式。**
+
+##  7.3 枚举类型
+
+如果一个变量只有几种可能的值，可以定义为枚举(enumeration)类型。所谓枚举是指将变量的值一一列举出来，变量的值只能在列举出来的值的范围内。
+
+声明枚举类型用`enum`开头. 如：
+
+`enum weekday {sun, mon, tue, wed, thu, fri, sat};`
+
+`enum  枚举类型名  {枚举常量列表};`
+
+注意两点：
+
+1. 枚举变量的值只能在列举出来的值的范围内
+2. 枚举变量的值（枚举元素）是常量，称为枚举常量。
+
+## 7.4 用 typedef 声明类型
+
+可以用 typedef 声明一个新的类型名来代替已有的类型名。如：
+
+```c++
+typedef 用法为：
+    typedef current_name new_name;
+如：
+typedef int INTEGER;      //指定用标识符INTEGER 代表 int 类型
+typedef float REAL;       //指定用REAL代表float类型
+
+int i,j; float a,b;  等价于：
+INTEGER i,j; REAL a,b;
+
+typedef struct    //注意在struct 之前用了关键字 typedef， 表示是声明新名
+{int month;
+int day;
+int year;
+}DATA;         //注意DATA是新类型名，而不是结构体变量名
+
+DATA birthday;
+```
+
+# 面向对象的程序设计-----> 
+
+# 第 8 章 类和对象
+
+##  8.2 类的声明和对象的定义
+
+类中定义的数据变量默认是私有(private)的，外界函数不能访问，只有类内变量可以访问（友元类例外，在第9章有关于友元类的介绍）。类中的变量分为私有(private)和公共(public)变量。私有变量只能被类内变量访问，公共变量可以被类内变量和类外变量访问。
+
+类的定义形式如下：
+
+```c++
+class 类名
+{private:
+	私有的数据和成员函数；
+public:
+	公用的数据和成员函数；
+}
+```
+
+当然，也可以先写public部分，后写private部分。使用户将注意力集中在能被外界调用的成员上。
+
+### 8.2.4 类和结构体类型的异同
 
 
 
